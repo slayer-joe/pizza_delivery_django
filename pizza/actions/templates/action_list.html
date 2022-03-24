@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block actions %}
+    <h2 class="page-title">Акции</h2>
+    <div class="actions-container">
+        {% for item in page_obj  %}
+            <div class="action-item">
+                <img src="{{ item.imageUrl }}" alt="image">
+                <div class="info-block">
+                    <h3 class="action-title">{{ item.title }}</h3>
+                    <p class="action-description">{{ item.text }}</p>
+                    <p class="create-date">{{ item.create_date }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock actions %}

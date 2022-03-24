@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block user_login %}
+    <form action="{% url 'user_login_page' %}" method="post">
+        {% if form.non_field_errors %}
+        {{form.non_field_errors}}
+        {% endif %}
+        {% csrf_token %}
+        <div>
+            {% if form.username.errors %}
+            {{form.username.errors}}
+            {% endif %}
+            {{form.username}}            
+            <label for=""
+            {{form.username.label}}
+            ></label>
+        </div>
+        <div>
+            {% if form.password.errors %}
+                {{form.password.errors}}
+            {% endif %}
+            <label for=""
+            {{form.password.label}}
+            ></label>
+            {{form.password}}
+        </div>
+        <input type="submit" value="submit">
+    </form>
+{% endblock user_login %}

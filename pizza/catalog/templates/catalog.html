@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block catalog %}
+<h2 class="catalog-title">Каталог</h2>
+<div class="catalog-container">
+    <ul class="catalog">
+        {% for item in page_obj %}
+        <li class="pizza-card">
+            <h4 class="pizza-title">{{ item.title }}</h4>
+            <ul class="category-list">
+            {% for cat in item.cathegory.all %}
+                <li class="category-item">{{ cat.value }}</li>
+            {% endfor %}
+            </ul>
+            <img src="{{item.image}}" alt="img" class="pizza-img">
+            <p class="desc">{{ item.text }}</p>
+            <p class="price">Цена: 15,5p</p>
+            <button class="add">Добавить</button>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock catalog %}

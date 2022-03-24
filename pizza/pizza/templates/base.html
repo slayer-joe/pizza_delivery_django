@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Pizza House - доставка пиццы</title>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="{% static 'media/main-logo.png' %}" alt="" class="main-logo">
+            <h1 class="main-title">Pizza house</h1>
+            <div class="reg-container">
+                <a href="">Войти</a>
+                <a href="">Регистрация</a>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="/catalog">Главная</a></li>
+            <li class="nav-item"><a href="/actions">Акции</a></li>
+            <li class="nav-item"><a href="">О нас</a></li>
+            <li class="nav-item"><a href="">Контакты</a></li>
+        </ul>
+        <div class="cart-container">
+            <a href="" class="cart">
+                <span class="cart-title">Корзина</span>
+                <img src="{% static 'media/cart.png' %}" alt="" class="cart-logo">
+                <span class="quantity">0</span></a>
+        </div>
+    </nav>
+    <main>
+        {% block catalog %}{% endblock catalog %}
+        {% block actions %}{% endblock actions %}
+    </main>
+    <footer>
+        <p class="author">Created by: Ruslan Zhonin</p>
+    </footer>
+</body>
+</html>
