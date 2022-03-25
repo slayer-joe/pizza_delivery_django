@@ -275,6 +275,19 @@ main {
     margin-top: 10px;
 }
 
+.about-page .description h4 {
+    margin-left: 20px;
+}
+
+.about-page .description p {
+    margin: 10px 0 10px 40px;
+    font-size: 14px;
+}
+
+.about-page .title {
+    margin-bottom: 20px;
+}
+
 footer {
     position: fixed;
     bottom: 0;

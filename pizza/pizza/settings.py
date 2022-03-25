@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pizza',
     'catalog',
     'actions',
+    'about',
 ]
 
 MIDDLEWARE = [
