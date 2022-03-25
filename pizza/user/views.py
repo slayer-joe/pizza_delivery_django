@@ -20,7 +20,7 @@ class RegisterView(FormView):
         next_url = self.request.GET.get("next")
         if next_url is not None:
             return next_url
-        return reverse("all_list")
+        return reverse("catalog")
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)

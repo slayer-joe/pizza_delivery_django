@@ -13,10 +13,17 @@
         <div class="header-top">
             <img src="{% static 'media/main-logo.png' %}" alt="" class="main-logo">
             <h1 class="main-title">Pizza house</h1>
-            <div class="reg-container">
-                <a href="">Войти</a>
-                <a href="">Регистрация</a>
-            </div>
+            {% if user.is_authenticated %}
+                <div class="reg-container">
+                    <p>{{user.username}}</p>
+                    <a href="{% url 'logout_page' %}" class="logout">logout</a>
+                </div>
+            {% else %}
+                <div class="reg-container">
+                    <a href="{% url 'user_login_page' %}">Войти</a>
+                    <a href="{% url 'register_user' %}">Регистрация</a>
+                </div>
+            {% endif %}
         </div>
     </header>
     <nav class="main-nav">
@@ -36,6 +43,8 @@
     <main>
         {% block catalog %}{% endblock catalog %}
         {% block actions %}{% endblock actions %}
+        {% block user %}{% endblock user %}
+        {% block user_login %}{% endblock user_login %}
     </main>
     <footer>
         <p class="author">Created by: Ruslan Zhonin</p>

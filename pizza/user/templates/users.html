@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block users %}
-    <ul>
-        {% for user in page_obj %}
-            <li>{{user.username}} | {{user.phone}} {% if user.is_superuser %} | Superuser{% endif %}</li>
-        {% endfor %}
-        {% include "blocks/pages.html" %}
-    </ul>
-{% endblock users %}

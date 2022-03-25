@@ -18,9 +18,9 @@ class LoginForm(forms.Form):
             self.user = user
             return self.cleaned_data
         time.sleep(3)
-        self.add_error('username', 'Invalid username')
-        self.add_error('password', 'or invalid password')
-        raise forms.ValidationError("User not found")
+        self.add_error('username', 'Не верный логин')
+        self.add_error('password', 'Или пароль')
+        raise forms.ValidationError("Позьзователь не найден")
 
     def auth(self, request):
         login(request, self.user)

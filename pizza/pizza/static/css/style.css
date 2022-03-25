@@ -60,9 +60,11 @@ header {
     margin: 0 5px;
 } 
 
-.header-top a,
+.header-top a:not(.logout),
+.header-top p,
 .main-nav a,
-button.add {
+button.add,
+input[type="submit"] {
     padding: 10px 15px;
     background-color: orange;
     border-radius: 20px;
@@ -73,7 +75,7 @@ button.add {
     transition: box-shadow .3s;
 }
 
-.header-top a:hover,
+.header-top a:hover:not(.logout),
 .main-nav a:hover,
 button.add:hover {
     box-shadow: 0 0 3px 1px black;
@@ -89,6 +91,19 @@ main {
 .catalog {
     display: flex;
     flex-wrap: wrap;
+}
+
+.reg-container {
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
 }
 
 .pizza-card {
@@ -187,7 +202,7 @@ main {
 
 .action-item img {
     width: 100%;
-    height: 40%;
+    min-height: 40%;
 }
 
 .pagination {
@@ -199,6 +214,12 @@ main {
     border-radius: 10px;
 }
 
+.errorlist li {
+    list-style: none;
+    color: red;
+    font-size: 12px;
+
+}
 .pagination .arrow {
     padding: 5px;
 }
@@ -210,6 +231,50 @@ main {
     color: white;
     border-radius: 50%;
 }
+
+.helptext, br {
+    display: none;
+}
+
+.reg-log {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-log form {
+    margin: auto;
+    border: 1px solid black;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 1px gray;
+}
+
+.reg-log .title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.reg-log input[type="text"],
+.reg-log input[type="password"],
+.reg-log input[type="email"]
+ {
+    background: white !important;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.reg-log input[type="submit"] {
+    margin-top: 10px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
