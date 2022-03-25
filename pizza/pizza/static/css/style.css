@@ -190,6 +190,26 @@ main {
     height: 40%;
 }
 
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.pagination .arrow {
+    padding: 5px;
+}
+
+.pagination .page-number {
+    padding: 5px 10px;
+    margin: 0 2px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+}
 footer {
     position: fixed;
     bottom: 0;

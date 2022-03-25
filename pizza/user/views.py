@@ -33,7 +33,7 @@ class LoginView(FormView):
         next_url = self.request.GET.get("next")
         if next_url is not None:
             return next_url
-        return reverse("all_list")
+        return reverse("catalog")
 
     def form_valid(self, form):
         form.auth(self.request)
@@ -41,7 +41,7 @@ class LoginView(FormView):
 
 def logout(request):
     log_out(request)
-    return redirect("all_list")
+    return redirect("catalog")
 
 
 

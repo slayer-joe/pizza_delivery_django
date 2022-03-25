@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block catalog %}
 <h2 class="catalog-title">Каталог</h2>
 <div class="catalog-container">
@@ -13,10 +14,11 @@
             </ul>
             <img src="{{item.image}}" alt="img" class="pizza-img">
             <p class="desc">{{ item.text }}</p>
-            <p class="price">Цена: 15,5p</p>
+            <p class="price">Цена: {{ item.price }} р</p>
             <button class="add">Добавить</button>
         </li>
     {% endfor %}
+    {% include "blocks/pages.html" %}
     </ul>
 </div>
 {% endblock catalog %}
