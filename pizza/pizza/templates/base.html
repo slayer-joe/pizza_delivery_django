@@ -11,8 +11,10 @@
 <body>
     <header>
         <div class="header-top">
+        <div class="logo-container">
             <img src="{% static 'media/main-logo.png' %}" alt="" class="main-logo">
             <h1 class="main-title">Pizza house</h1>
+        </div>
             {% if user.is_authenticated %}
                 <div class="reg-container">
                     <p>{{user.username}}</p>
@@ -27,11 +29,13 @@
         </div>
     </header>
     <nav class="main-nav">
+        <button class="nav-toggle"><label for="nav-toggle"></label></button>
+		<input type="checkbox" id="nav-toggle">
         <ul class="nav-list">
-            <li class="nav-item"><a href="/catalog">Главная</a></li>
-            <li class="nav-item"><a href="/actions">Акции</a></li>
-            <li class="nav-item"><a href="/about">О нас</a></li>
-            <li class="nav-item"><a href="">Контакты</a></li>
+            <li class="nav-item"><a href="{% url 'catalog' %}">Главная</a></li>
+            <li class="nav-item"><a href="{% url 'actions' %}">Акции</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}">О нас</a></li>
+            <li class="nav-item"><a href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
         <div class="cart-container">
             <a href="" class="cart">
@@ -46,6 +50,7 @@
         {% block user %}{% endblock user %}
         {% block user_login %}{% endblock user_login %}
         {% block about %}{% endblock about %}
+        {% block contacts %}{% endblock contacts %}
     </main>
     <footer>
         <p class="author">Created by: Ruslan Zhonin</p>

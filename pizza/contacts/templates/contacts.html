@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contacts %}
+    <div class="contacts-page page">
+        <h2 class="title">Контакты</h2>
+        <div class="contacts">
+            {% for contact in page_obj %}
+            <div class="contact-block">
+                <h3 class="shop-title">{{ contact.title }}</h3>
+                <img src="{{ contact.shop_image_src}}" alt="shop image">
+                <p class="adress">{{ contact.adress }}</p>
+                <p class="phone-number">{{ contact.phone }}</p>
+                <a href="tel:{{ contact.phone }}" class="call">Позвонить</a>
+            </div> 
+        {% endfor %}
+        </div>
+    </div>
+{% endblock contacts %}

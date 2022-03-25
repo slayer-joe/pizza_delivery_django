@@ -31,10 +31,45 @@ header {
     justify-content: space-between;
 }
 
+.logo-container {
+    position: relative;
+    align-self: flex-start;
+}
+
+.main-nav input {
+    display: none;
+}
+
+.nav-toggle {
+border: none;
+background: none;
+display: none;
+position: relative;
+
+}
+
+.nav-toggle::after {
+content: " ||| ";
+color: black;
+}
+
+.nav-toggle label {
+display: block;
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+}
+
 .main-title {
     font-family: 'Permanent Marker', cursive;
     position: absolute;
     left: 85px;
+    z-index: 15;
+    min-width: 300px;
+    display: inline;
+    top: 20%;
 }
 
 .main-nav {
@@ -64,7 +99,8 @@ header {
 .header-top p,
 .main-nav a,
 button.add,
-input[type="submit"] {
+input[type="submit"],
+.call {
     padding: 10px 15px;
     background-color: orange;
     border-radius: 20px;
@@ -81,7 +117,6 @@ button.add:hover {
     box-shadow: 0 0 3px 1px black;
 }
 
-
 main {
     max-width: 1132px;
     width: 90%;
@@ -91,6 +126,7 @@ main {
 .catalog {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .reg-container {
@@ -184,9 +220,11 @@ main {
 
 .actions-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .action-item {
-    width: 30%;
+    width: 300px;
     margin: 10px;
     border-radius: 20px;
     box-shadow: 0 0 5px 1px gray;
@@ -288,6 +326,39 @@ main {
     margin-bottom: 20px;
 }
 
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contacts .contact-block {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid gray;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 1px gray;
+    transition: transform .3s;
+}
+
+.contacts .adress {
+    text-align: center;
+}
+
+.contacts img {
+    width: 100%;
+}
+
+.contact-block p,
+.contact-block h3 {
+    margin-bottom: 10px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
@@ -298,4 +369,37 @@ footer {
     justify-content: center;
     background-color: black;
     color: white;
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .nav-toggle {
+		display: inline-block;
+	}
+
+	.main-nav ul {
+		display: none;
+	}
+
+    .main-nav ul li {
+        padding: 20px 10px;
+    }
+	
+	.main-nav #nav-toggle:checked ~ ul {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+        z-index: 100;
+		left: 0;
+		top: 60px;
+        background-color: white;
+        box-shadow: 0 0 5px 1px gray;
+	}
 }
