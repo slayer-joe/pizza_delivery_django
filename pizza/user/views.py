@@ -41,8 +41,4 @@ class LoginView(FormView):
 
 def logout(request):
     log_out(request)
-    return redirect("catalog")
-
-
-
-    
+    return redirect("catalog") 

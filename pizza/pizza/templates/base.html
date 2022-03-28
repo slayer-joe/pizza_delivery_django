@@ -38,9 +38,9 @@
             <li class="nav-item"><a href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
         <div class="cart-container">
-            <a href="" class="cart">
+            <a href="{% url 'cart' %}" class="cart">
                 <span class="cart-title">Корзина</span>
-                <img src="{% static 'media/cart.png' %}" alt="" class="cart-logo">
+                <img src="{% static 'media/cart.png' %}" alt="cart" class="cart-logo">
                 <span class="quantity">0</span></a>
         </div>
     </nav>
@@ -51,9 +51,12 @@
         {% block user_login %}{% endblock user_login %}
         {% block about %}{% endblock about %}
         {% block contacts %}{% endblock contacts %}
+         {% block cart %}{% endblock cart %}
     </main>
     <footer>
         <p class="author">Created by: Ruslan Zhonin</p>
     </footer>
+    <script src="{% static 'js/cart.js' %}"></script>
+    
 </body>
 </html>
